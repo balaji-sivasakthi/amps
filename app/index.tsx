@@ -3,7 +3,14 @@ import { Colors } from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React from "react";
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 export default function Auth() {
   const router = useRouter();
@@ -22,12 +29,20 @@ export default function Auth() {
             style={styles.logoImage}
             source={require("../assets/images/icon.png")}
           />
-          <Text style={{
-            fontSize:28
-          }}>Get Started</Text>
-          <Text style={{
-            marginBottom:30
-          }}>Welcome to Milk Collecting App - Let's Login In </Text>
+          <Text
+            style={{
+              fontSize: 28,
+            }}
+          >
+            Get Started
+          </Text>
+          <Text
+            style={{
+              marginBottom: 30,
+            }}
+          >
+            Welcome to Milk Collecting App - Let's Login In{" "}
+          </Text>
           <TextInput
             style={styles.inputStyle}
             underlineColorAndroid="transparent"
@@ -39,13 +54,17 @@ export default function Auth() {
             style={styles.inputStyle}
             underlineColorAndroid="transparent"
             placeholder="Password"
-           placeholderTextColor={Colors.light.primaryColor}
+            placeholderTextColor={Colors.light.primaryColor}
             autoCapitalize="none"
           />
-         
-         <AmpsButton onPress={()=>{
-            router.push('/home')
-         }}/>
+
+          <AmpsButton
+            title="Submit"
+            variant="primary"
+            onPress={() => {
+              router.push("/home");
+            }}
+          />
         </View>
         <View
           style={{
@@ -94,12 +113,12 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   inputStyle: {
-    fontSize:18,
-    marginBottom:10,
+    fontSize: 18,
+    marginBottom: 10,
     height: 55,
-    paddingLeft:10,
+    paddingLeft: 10,
     borderColor: Colors.light.primaryColor,
-    borderRadius:5,
+    borderRadius: 5,
     borderWidth: 1.5,
   },
   logoImage: {

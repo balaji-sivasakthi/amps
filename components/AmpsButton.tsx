@@ -1,32 +1,60 @@
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 
-
 interface AmpsButtonProps {
-  onPress:()=> void
+  variant: "primary" | "secondary";
+  title: string;
+  onPress: () => void;
 }
 
-const AmpsButton = ({onPress}:AmpsButtonProps) => {
+const AmpsButton = ({ onPress, title, variant }: AmpsButtonProps) => {
   return (
-    <TouchableOpacity style={styles.submitButton} onPress={onPress}>
-      <Text style={styles.submitButtonText}> Submit </Text>
+    <TouchableOpacity
+      style={
+        variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary
+      }
+      onPress={onPress}
+    >
+      <Text
+        style={
+          variant === "primary"
+            ? styles.buttonPrimaryText
+            : styles.buttonSecondaryText
+        }
+      >
+        {title}
+      </Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  submitButton: {
-    justifyContent:'center',
-    alignItems:'center',
+  buttonPrimary: {
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: Colors.light.primaryColor,
     padding: 10,
-    borderRadius:5,
+    borderRadius: 5,
     height: 55,
   },
-  submitButtonText: {
+  buttonPrimaryText: {
     color: "white",
     textAlign: "center",
+  },
+  buttonSecondary: {
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: Colors.light.primaryColor,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 5,
+    height: 55,
+  },
+  buttonSecondaryText: {
+    color: Colors.light.primaryColor,
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
 export default AmpsButton;
