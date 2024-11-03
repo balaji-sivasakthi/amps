@@ -1,10 +1,10 @@
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import AmpsCard from "@/components/AmpsCard";
+import Header from "@/components/home/Header";
+import MenuCard from "@/components/home/MenuCard";
+import PrimaryCards from "@/components/home/PrimaryCards";
 import React from "react";
-import { ImageBackground, StyleSheet, View } from "react-native";
-import {
-  GestureHandlerRootView,
-  TouchableOpacity,
-} from "react-native-gesture-handler";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function HomeScreen() {
   return (
@@ -13,31 +13,10 @@ export default function HomeScreen() {
         flex: 1,
       }}
     >
-      <View style={styles.container}>
-        <ImageBackground
-          source={require("../assets/images/home-header.png")}
-          style={styles.imageBackground}
-          resizeMode="cover"
-        >
-          <View>
-            <TouchableOpacity onPress={() => {}}>
-              <MaterialIcons name="menu" size={24} color="black" />
-            </TouchableOpacity>
-          </View>
-        </ImageBackground>
-      </View>
+      <Header />
+      <MenuCard/>
+      <PrimaryCards/>
     </GestureHandlerRootView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: "column",
-    borderRadius: 10,
-  },
-  imageBackground: {
-    width: "100%",
-    height: 200,
-  },
-});

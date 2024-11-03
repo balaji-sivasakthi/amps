@@ -9,7 +9,6 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity,
 } from "react-native";
 
 export default function Auth() {
