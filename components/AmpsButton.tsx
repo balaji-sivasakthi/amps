@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.primaryColor,
     padding: 10,
     borderRadius: 5,
-    width:300,
     height: 55,
   },
   buttonPrimaryText: {
@@ -50,7 +49,6 @@ const styles = StyleSheet.create({
     borderColor: Colors.light.primaryColor,
     borderWidth: 1,
     padding: 10,
-    width:300,
     borderRadius: 5,
     height: 55,
   },

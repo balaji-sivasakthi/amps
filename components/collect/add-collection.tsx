@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   halfContainer: {
     width: "50%",
-    paddingLeft: 20,
+    paddingLeft: 10,
   },
   buttonContainer: {    
     padding:20,
