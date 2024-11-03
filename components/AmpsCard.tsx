@@ -4,11 +4,12 @@ import React from "react";
 interface AmpsCard {
   title: string;
   icon: React.ReactNode;
+  onPress: ()=>void;
 }
 
-const AmpsCard = ({ title, icon }: AmpsCard) => {
+const AmpsCard = ({ title, icon, onPress }: AmpsCard) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       {icon}
       <Text style={{
         textAlign:'center',
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
     borderRadius:5,
     width:'20%',
     padding: 30,
-    borderColor: "#f3f3f3",
+    borderColor: "#D9D9D9",
     justifyContent:'center',
     alignItems:'center',
     backgroundColor:'#fff'

@@ -1,24 +1,48 @@
 import { View, Image, StyleSheet } from "react-native";
 import React from "react";
 import AmpsCard from "../AmpsCard";
+import { useRouter } from "expo-router";
 
 const MenuCard = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <AmpsCard
-        icon={<Image source={require("./../../assets/images/collect-icon.png")} />}
+        onPress={() => {
+          router.push("/collect");
+        }}
+        icon={
+          <Image source={require("./../../assets/images/collect-icon.png")} />
+        }
         title="Collect"
       />
       <AmpsCard
-        icon={<Image source={require("./../../assets/images/report-icon.png")} />}
+        onPress={() => {
+          router.push("/report");
+        }}
+        icon={
+          <Image source={require("./../../assets/images/report-icon.png")} />
+        }
         title="Report"
       />
       <AmpsCard
-        icon={<Image source={require("./../../assets/images/profile-icon.png")} />}
+        onPress={() => {
+          router.push("/profile");
+        }}
+        icon={
+          <Image source={require("./../../assets/images/profile-icon.png")} />
+        }
         title="Profile"
       />
       <AmpsCard
-        icon={<Image source={require("./../../assets/images/subscription-icon.png")} />}
+        onPress={() => {
+          router.push("/subscription");
+        }}
+        icon={
+          <Image
+            source={require("./../../assets/images/subscription-icon.png")}
+          />
+        }
         title="Subscription"
       />
     </View>
@@ -30,7 +54,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    padding:40
+    padding: 40,
   },
 });
 

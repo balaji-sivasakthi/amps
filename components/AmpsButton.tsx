@@ -1,4 +1,4 @@
-import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 
@@ -6,13 +6,14 @@ interface AmpsButtonProps {
   variant: "primary" | "secondary";
   title: string;
   onPress: () => void;
+  style?: StyleProp<ViewStyle>
 }
 
-const AmpsButton = ({ onPress, title, variant }: AmpsButtonProps) => {
+const AmpsButton = ({ onPress, title, variant, style }: AmpsButtonProps) => {
   return (
     <TouchableOpacity
       style={
-        variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary
+        [variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary, style]
       }
       onPress={onPress}
     >
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.light.primaryColor,
     padding: 10,
     borderRadius: 5,
+    width:300,
     height: 55,
   },
   buttonPrimaryText: {
@@ -48,6 +50,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.light.primaryColor,
     borderWidth: 1,
     padding: 10,
+    width:300,
     borderRadius: 5,
     height: 55,
   },

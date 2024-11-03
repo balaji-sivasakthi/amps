@@ -13,11 +13,12 @@ interface AmpsImageCardProps {
   src: ImageURISource;
   title: string;
   description: string;
+  onPress:()=>void;
 }
 
-const AmpsImageCard = ({ src, title, description }: AmpsImageCardProps) => {
+const AmpsImageCard = ({ src, title, description , onPress}: AmpsImageCardProps) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <ImageBackground
         resizeMode="cover"
         style={{
