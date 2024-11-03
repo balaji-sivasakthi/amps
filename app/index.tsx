@@ -1,10 +1,12 @@
 import AmpsButton from "@/components/AmpsButton";
 import { Colors } from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
 import React from "react";
 import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
 
 export default function Auth() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <View style={styles.leftHalf} />
@@ -41,7 +43,9 @@ export default function Auth() {
             autoCapitalize="none"
           />
          
-         <AmpsButton/>
+         <AmpsButton onPress={()=>{
+            router.push('/home')
+         }}/>
         </View>
         <View
           style={{

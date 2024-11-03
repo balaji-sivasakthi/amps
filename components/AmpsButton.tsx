@@ -2,9 +2,14 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 
-const AmpsButton = () => {
+
+interface AmpsButtonProps {
+  onPress:()=> void
+}
+
+const AmpsButton = ({onPress}:AmpsButtonProps) => {
   return (
-    <TouchableOpacity style={styles.submitButton} onPress={() => {}}>
+    <TouchableOpacity style={styles.submitButton} onPress={onPress}>
       <Text style={styles.submitButtonText}> Submit </Text>
     </TouchableOpacity>
   );
