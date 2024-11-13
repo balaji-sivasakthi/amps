@@ -1,5 +1,5 @@
 <h1 align="center">
-  Automated Milk Collection System 
+  Automated Milk Procurement System 
 </h1>
 
 <p align="center">Designed for <b>milk collection centers</b>, it facilitates efficient milk collection by handling tasks such as data entry, storage, and management to ensure a smooth and reliable collection process.</p>
