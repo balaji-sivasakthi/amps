@@ -10,6 +10,7 @@ import {
   View,
   TextInput,
 } from "react-native";
+import { db } from "@/db";
 
 export default function Auth() {
   const router = useRouter();
@@ -61,7 +62,7 @@ export default function Auth() {
             title="Submit"
             variant="primary"
             onPress={() => {
-              dispatch(signIn({username:'balaji', password:'hello'}))
+              router.push('/home')
             }}
           />
         </View>
