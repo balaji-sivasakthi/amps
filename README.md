@@ -3,7 +3,7 @@ Designed for **milk collection centers**, it facilitates efficient milk collecti
 
 ## System Diagram
 
-<img src="https://github.com/user-attachments/assets/97191c48-5960-4c88-ae33-7e0a33398274" alt="Amps Diagram" style="width:100%;"/>
+<img src="https://github.com/user-attachments/assets/b7ae4865-b28f-4a56-b786-68f486379c8d" alt="Amps Diagram" style="width:100%;"/>
 
 ## Features
 
@@ -48,5 +48,4 @@ Designed for **milk collection centers**, it facilitates efficient milk collecti
 - **Yarn**: For package management.
 
 ## Data Model
-
-![AMPS Diagram (1)](https://github.com/user-attachments/assets/eb27d11d-336f-419d-9fdd-9d4307b9c6a0)
+<img src="https://github.com/user-attachments/assets/eb27d11d-336f-419d-9fdd-9d4307b9c6a0" alt="Amps Diagram" style="width:100%;"/>
