@@ -1,22 +1,22 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import React from 'react';
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import React from "react";
 
-interface AmpsCard {
+interface AmpsCardProps {
   title: string;
   icon: React.ReactNode;
   onPress: () => void;
 }
 
-const AmpsCard = ({ title, icon, onPress }: AmpsCard) => {
+const AmpsCard = ({ title, icon, onPress }: AmpsCardProps) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       {icon}
       <Text
         style={{
-          textAlign: 'center',
+          textAlign: "center",
           marginTop: 10,
           fontSize: 18,
-          fontWeight: 'bold',
+          fontWeight: "bold",
         }}
       >
         {title}
@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderRadius: 5,
-    width: '20%',
+    width: "20%",
     padding: 30,
-    borderColor: '#D9D9D9',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
+    borderColor: "#D9D9D9",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
   },
 });
 
