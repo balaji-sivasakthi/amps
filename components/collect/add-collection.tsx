@@ -5,9 +5,11 @@ import AmpsButton from "../AmpsButton";
 
 const AddCollection = () => {
   return (
-    <View style={{
+    <View
+      style={{
         padding: 30,
-    }}>
+      }}
+    >
       <View style={styles.container}>
         <View style={styles.halfContainer}>
           <AmpsTextInput title="Farmer Id" />
@@ -23,8 +25,13 @@ const AddCollection = () => {
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <AmpsButton style={{marginBottom:10}} onPress={()=>{}} variant="primary" title="Print"/>
-        <AmpsButton onPress={()=>{}} variant="primary" title="Save"/>
+        <AmpsButton
+          style={{ marginBottom: 10 }}
+          onPress={() => {}}
+          variant="primary"
+          title="Print"
+        />
+        <AmpsButton onPress={() => {}} variant="primary" title="Save" />
       </View>
     </View>
   );
@@ -38,8 +45,8 @@ const styles = StyleSheet.create({
     width: "50%",
     paddingLeft: 10,
   },
-  buttonContainer: {    
-    padding:20,
+  buttonContainer: {
+    padding: 20,
   },
 });
 

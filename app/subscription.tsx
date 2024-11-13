@@ -12,9 +12,6 @@ export default function SubscriptionScreen() {
       style={{
         flex: 1,
       }}
-    >
-      
-    </GestureHandlerRootView>
+    ></GestureHandlerRootView>
   );
 }
-

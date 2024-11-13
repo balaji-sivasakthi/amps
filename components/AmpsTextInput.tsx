@@ -1,9 +1,16 @@
-import { View, Text, TextInput, StyleSheet, StyleProp, ViewStyle } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  StyleProp,
+  ViewStyle,
+} from "react-native";
 import React from "react";
 
 interface AmpsTextInputProps {
   title: string;
-  style?:StyleProp<ViewStyle>
+  style?: StyleProp<ViewStyle>;
 }
 
 export default function AmpsTextInput({ title, style }: AmpsTextInputProps) {

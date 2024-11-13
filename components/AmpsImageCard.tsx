@@ -13,10 +13,15 @@ interface AmpsImageCardProps {
   src: ImageURISource;
   title: string;
   description: string;
-  onPress:()=>void;
+  onPress: () => void;
 }
 
-const AmpsImageCard = ({ src, title, description , onPress}: AmpsImageCardProps) => {
+const AmpsImageCard = ({
+  src,
+  title,
+  description,
+  onPress,
+}: AmpsImageCardProps) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <ImageBackground
@@ -28,7 +33,9 @@ const AmpsImageCard = ({ src, title, description , onPress}: AmpsImageCardProps)
         source={src || require("../assets/images/icon.png")}
       >
         <View style={styles.content}>
-          <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+          <View
+            style={{ flexDirection: "row", justifyContent: "space-between" }}
+          >
             <Text style={styles.title}>{title}</Text>
             <MaterialIcons name="arrow-forward-ios" size={24} color="white" />
           </View>
@@ -44,19 +51,18 @@ const styles = StyleSheet.create({
     width: 500,
     height: 200,
   },
-  content:{
-    padding:10,
-
+  content: {
+    padding: 10,
   },
-  title:{
-    fontSize:24,
-    fontWeight:"bold",
-    color:"#fff"
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#fff",
   },
-  description:{
-    fontSize:14,
-    color:"#fff"
-  }
+  description: {
+    fontSize: 14,
+    color: "#fff",
+  },
 });
 
 export default AmpsImageCard;

@@ -14,9 +14,8 @@ export default function HomeScreen() {
       }}
     >
       <Header />
-      <MenuCard/>
-      <PrimaryCards/>
+      <MenuCard />
+      <PrimaryCards />
     </GestureHandlerRootView>
   );
 }
-

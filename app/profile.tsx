@@ -12,9 +12,6 @@ export default function ProfileScreen() {
       style={{
         flex: 1,
       }}
-    >
-      
-    </GestureHandlerRootView>
+    ></GestureHandlerRootView>
   );
 }
-

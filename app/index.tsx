@@ -3,14 +3,7 @@ import AmpsButton from "@/components/AmpsButton";
 import { Colors } from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-} from "react-native";
-import { db } from "@/db";
+import { Image, StyleSheet, Text, View, TextInput } from "react-native";
 
 export default function Auth() {
   const router = useRouter();
@@ -62,7 +55,7 @@ export default function Auth() {
             title="Submit"
             variant="primary"
             onPress={() => {
-              router.push('/home')
+              router.push("/home");
             }}
           />
         </View>

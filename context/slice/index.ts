@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import farmer from './farmer.slice';
+import { combineReducers } from "redux";
+import farmer from "./farmer.slice";
 
 const rootReducer = combineReducers({
-    farmer
+  farmer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

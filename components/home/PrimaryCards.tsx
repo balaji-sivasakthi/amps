@@ -4,22 +4,22 @@ import AmpsImageCard from "../AmpsImageCard";
 import { useRouter } from "expo-router";
 
 export default function PrimaryCards() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <AmpsImageCard
         title="Add Farmer"
         description={"Register your Farmers"}
-        onPress={()=>{
-          router.push('/farmer')
+        onPress={() => {
+          router.push("/farmer");
         }}
         src={require("../../assets/images/add-farmer-icon.png")}
       />
       <AmpsImageCard
         title="Add Rate Chart"
         description={"Adjust your rate chart"}
-        onPress={()=>{
-          router.push('/rate-chart')
+        onPress={() => {
+          router.push("/rate-chart");
         }}
         src={require("../../assets/images/rate-chart-icon.png")}
       />

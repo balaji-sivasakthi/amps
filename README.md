@@ -1,4 +1,5 @@
 # Automated Milk Collection System
+
 Designed for **milk collection centers**, it facilitates efficient milk collection by handling tasks such as data entry, storage, and management to ensure a smooth and reliable collection process.
 
 ## System Diagram
@@ -16,6 +17,7 @@ Designed for **milk collection centers**, it facilitates efficient milk collecti
 ## Installation
 
 1. **Clone the Repository**:
+
    ```bash
    git clone https://github.com/balaji-sivasakthi/amps
    cd amps
@@ -23,6 +25,7 @@ Designed for **milk collection centers**, it facilitates efficient milk collecti
 
 2. **Install Dependencies**:
    Use Yarn to install necessary dependencies:
+
    ```bash
    yarn install
    ```
@@ -48,4 +51,5 @@ Designed for **milk collection centers**, it facilitates efficient milk collecti
 - **Yarn**: For package management.
 
 ## Data Model
+
 <img src="https://github.com/user-attachments/assets/eb27d11d-336f-419d-9fdd-9d4307b9c6a0" alt="Amps Diagram" style="width:100%;"/>

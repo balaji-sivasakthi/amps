@@ -14,8 +14,7 @@ export default function CollectScreen() {
         flex: 1,
       }}
     >
-      <AddCollection/>
+      <AddCollection />
     </GestureHandlerRootView>
   );
 }
-

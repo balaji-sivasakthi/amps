@@ -1,4 +1,10 @@
-import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 import React from "react";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 
@@ -66,25 +72,23 @@ const Header = () => {
 export default Header;
 
 const styles = StyleSheet.create({
-    container: {
-      flexDirection: "column",
-      borderRadius: 10,
-    },
-    headerDay: {
-      fontSize: 48,
-      color: "#fff",
-    },
-    headerRow: {
-      flexDirection: "row",
-      justifyContent: "space-between",
-    },
-    headerRightCard: {
-      marginRight: 20,
-    },
-    imageBackground: {
-      width: "100%",
-      height: 200,
-  
-    },
-  });
-  
+  container: {
+    flexDirection: "column",
+    borderRadius: 10,
+  },
+  headerDay: {
+    fontSize: 48,
+    color: "#fff",
+  },
+  headerRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  headerRightCard: {
+    marginRight: 20,
+  },
+  imageBackground: {
+    width: "100%",
+    height: 200,
+  },
+});

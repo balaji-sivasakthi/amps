@@ -1,5 +1,5 @@
 import React from "react";
-import {  Stack } from "expo-router";
+import { Stack } from "expo-router";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "@/context/store";
@@ -82,7 +82,6 @@ export default function RootLayout() {
             name="rate-chart"
           />
         </Stack>
-
       </PersistGate>
     </Provider>
   );

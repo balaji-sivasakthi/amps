@@ -12,9 +12,6 @@ export default function ReportScreen() {
       style={{
         flex: 1,
       }}
-    >
-      
-    </GestureHandlerRootView>
+    ></GestureHandlerRootView>
   );
 }
-

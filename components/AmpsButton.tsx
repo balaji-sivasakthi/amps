@@ -1,4 +1,10 @@
-import { Text, StyleSheet, TouchableOpacity, StyleProp, ViewStyle } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  StyleProp,
+  ViewStyle,
+} from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 
@@ -6,15 +12,16 @@ interface AmpsButtonProps {
   variant: "primary" | "secondary";
   title: string;
   onPress: () => void;
-  style?: StyleProp<ViewStyle>
+  style?: StyleProp<ViewStyle>;
 }
 
 const AmpsButton = ({ onPress, title, variant, style }: AmpsButtonProps) => {
   return (
     <TouchableOpacity
-      style={
-        [variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary, style]
-      }
+      style={[
+        variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary,
+        style,
+      ]}
       onPress={onPress}
     >
       <Text
