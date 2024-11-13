@@ -2,9 +2,11 @@
   Automated Milk Collection System 
 </h1>
 
+<p align="center">Designed for <b>milk collection centers</b>, it facilitates efficient milk collection by handling tasks such as data entry, storage, and management to ensure a smooth and reliable collection process.</p>
+
 ![Milk Collection Group 1](https://github.com/user-attachments/assets/118492ec-34bd-4032-8315-5c510485c2f3)
 
-Designed for **milk collection centers**, it facilitates efficient milk collection by handling tasks such as data entry, storage, and management to ensure a smooth and reliable collection process.
+
 
 ## System Diagram
 
