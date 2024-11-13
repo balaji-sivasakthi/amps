@@ -1,6 +1,10 @@
 # Automated Milk Collection System
 Designed for **milk collection centers**, it facilitates efficient milk collection by handling tasks such as data entry, storage, and management to ensure a smooth and reliable collection process.
 
+## System Diagram
+
+<img src="https://github.com/user-attachments/assets/97191c48-5960-4c88-ae33-7e0a33398274" alt="Amps Diagram" style="width:100%;"/>
+
 ## Features
 
 - **User-friendly Interface**: Easy-to-use interface for milk collection center operators.
