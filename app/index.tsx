@@ -1,8 +1,8 @@
+import React from "react";
 import AmpsButton from "@/components/AmpsButton";
 import { Colors } from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
-import React from "react";
 import {
   Image,
   StyleSheet,
@@ -61,7 +61,7 @@ export default function Auth() {
             title="Submit"
             variant="primary"
             onPress={() => {
-              router.push("/home");
+              dispatch(signIn({username:'balaji', password:'hello'}))
             }}
           />
         </View>
