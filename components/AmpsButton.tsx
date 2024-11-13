@@ -1,15 +1,9 @@
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  StyleProp,
-  ViewStyle,
-} from "react-native";
-import React from "react";
-import { Colors } from "@/constants/Colors";
+import { Text, StyleSheet, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
+import React from 'react';
+import { Colors } from '@/constants/Colors';
 
 interface AmpsButtonProps {
-  variant: "primary" | "secondary";
+  variant: 'primary' | 'secondary';
   title: string;
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
@@ -18,19 +12,10 @@ interface AmpsButtonProps {
 const AmpsButton = ({ onPress, title, variant, style }: AmpsButtonProps) => {
   return (
     <TouchableOpacity
-      style={[
-        variant === "primary" ? styles.buttonPrimary : styles.buttonSecondary,
-        style,
-      ]}
+      style={[variant === 'primary' ? styles.buttonPrimary : styles.buttonSecondary, style]}
       onPress={onPress}
     >
-      <Text
-        style={
-          variant === "primary"
-            ? styles.buttonPrimaryText
-            : styles.buttonSecondaryText
-        }
-      >
+      <Text style={variant === 'primary' ? styles.buttonPrimaryText : styles.buttonSecondaryText}>
         {title}
       </Text>
     </TouchableOpacity>
@@ -39,20 +24,20 @@ const AmpsButton = ({ onPress, title, variant, style }: AmpsButtonProps) => {
 
 const styles = StyleSheet.create({
   buttonPrimary: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: Colors.light.primaryColor,
     padding: 10,
     borderRadius: 5,
     height: 55,
   },
   buttonPrimaryText: {
-    color: "white",
-    textAlign: "center",
+    color: 'white',
+    textAlign: 'center',
   },
   buttonSecondary: {
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     borderColor: Colors.light.primaryColor,
     borderWidth: 1,
     padding: 10,
@@ -61,8 +46,8 @@ const styles = StyleSheet.create({
   },
   buttonSecondaryText: {
     color: Colors.light.primaryColor,
-    textAlign: "center",
-    fontWeight: "bold",
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
 export default AmpsButton;

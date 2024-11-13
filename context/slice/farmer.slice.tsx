@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface FarmerState {
   farmerName?: string;
@@ -9,7 +9,7 @@ const initialState: FarmerState = {
 };
 
 const farmerSlice = createSlice({
-  name: "farmer",
+  name: 'farmer',
   initialState,
   reducers: {
     addFarmer: (state, action: PayloadAction<FarmerState>) => {

@@ -1,13 +1,7 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  ImageBackground,
-  ImageURISource,
-} from "react-native";
-import React from "react";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { MaterialIcons } from "@expo/vector-icons";
+import { View, Text, StyleSheet, ImageBackground, ImageURISource } from 'react-native';
+import React from 'react';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { MaterialIcons } from '@expo/vector-icons';
 
 interface AmpsImageCardProps {
   src: ImageURISource;
@@ -16,26 +10,19 @@ interface AmpsImageCardProps {
   onPress: () => void;
 }
 
-const AmpsImageCard = ({
-  src,
-  title,
-  description,
-  onPress,
-}: AmpsImageCardProps) => {
+const AmpsImageCard = ({ src, title, description, onPress }: AmpsImageCardProps) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <ImageBackground
         resizeMode="cover"
         style={{
-          width: "100%",
-          height: "100%",
+          width: '100%',
+          height: '100%',
         }}
-        source={src || require("../assets/images/icon.png")}
+        source={src || require('../assets/images/icon.png')}
       >
         <View style={styles.content}>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
             <Text style={styles.title}>{title}</Text>
             <MaterialIcons name="arrow-forward-ios" size={24} color="white" />
           </View>
@@ -56,12 +43,12 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: "bold",
-    color: "#fff",
+    fontWeight: 'bold',
+    color: '#fff',
   },
   description: {
     fontSize: 14,
-    color: "#fff",
+    color: '#fff',
   },
 });
 

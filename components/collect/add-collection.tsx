@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
-import AmpsTextInput from "../AmpsTextInput";
-import AmpsButton from "../AmpsButton";
+import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import AmpsTextInput from '../AmpsTextInput';
+import AmpsButton from '../AmpsButton';
 
 const AddCollection = () => {
   return (
@@ -39,10 +39,10 @@ const AddCollection = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   halfContainer: {
-    width: "50%",
+    width: '50%',
     paddingLeft: 10,
   },
   buttonContainer: {

@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet } from "react-native";
-import React from "react";
-import AmpsImageCard from "../AmpsImageCard";
-import { useRouter } from "expo-router";
+import { View, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import AmpsImageCard from '../AmpsImageCard';
+import { useRouter } from 'expo-router';
 
 export default function PrimaryCards() {
   const router = useRouter();
@@ -9,19 +9,19 @@ export default function PrimaryCards() {
     <View style={styles.container}>
       <AmpsImageCard
         title="Add Farmer"
-        description={"Register your Farmers"}
+        description={'Register your Farmers'}
         onPress={() => {
-          router.push("/farmer");
+          router.push('/farmer');
         }}
-        src={require("../../assets/images/add-farmer-icon.png")}
+        src={require('../../assets/images/add-farmer-icon.png')}
       />
       <AmpsImageCard
         title="Add Rate Chart"
-        description={"Adjust your rate chart"}
+        description={'Adjust your rate chart'}
         onPress={() => {
-          router.push("/rate-chart");
+          router.push('/rate-chart');
         }}
-        src={require("../../assets/images/rate-chart-icon.png")}
+        src={require('../../assets/images/rate-chart-icon.png')}
       />
     </View>
   );
@@ -29,7 +29,7 @@ export default function PrimaryCards() {
 const styles = StyleSheet.create({
   container: {
     marginTop: 30,
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
   },
 });

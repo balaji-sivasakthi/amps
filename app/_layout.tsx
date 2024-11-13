@@ -1,8 +1,8 @@
-import React from "react";
-import { Stack } from "expo-router";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "@/context/store";
+import React from 'react';
+import { Stack } from 'expo-router';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor, store } from '@/context/store';
 
 export default function RootLayout() {
   return (
@@ -23,61 +23,61 @@ export default function RootLayout() {
           />
           <Stack.Screen
             options={{
-              title: "Collection",
+              title: 'Collection',
               headerStyle: {
-                backgroundColor: "#003713",
+                backgroundColor: '#003713',
               },
-              headerTintColor: "#fff",
+              headerTintColor: '#fff',
             }}
             name="collect"
           />
           <Stack.Screen
             options={{
-              title: "Report",
+              title: 'Report',
               headerStyle: {
-                backgroundColor: "#003713",
+                backgroundColor: '#003713',
               },
-              headerTintColor: "#fff",
+              headerTintColor: '#fff',
             }}
             name="report"
           />
           <Stack.Screen
             options={{
-              title: "Profile",
+              title: 'Profile',
               headerStyle: {
-                backgroundColor: "#003713",
+                backgroundColor: '#003713',
               },
-              headerTintColor: "#fff",
+              headerTintColor: '#fff',
             }}
             name="profile"
           />
           <Stack.Screen
             options={{
-              title: "Subscription",
+              title: 'Subscription',
               headerStyle: {
-                backgroundColor: "#003713",
+                backgroundColor: '#003713',
               },
-              headerTintColor: "#fff",
+              headerTintColor: '#fff',
             }}
             name="subscription"
           />
           <Stack.Screen
             options={{
-              title: "Farmer",
+              title: 'Farmer',
               headerStyle: {
-                backgroundColor: "#003713",
+                backgroundColor: '#003713',
               },
-              headerTintColor: "#fff",
+              headerTintColor: '#fff',
             }}
             name="farmer"
           />
           <Stack.Screen
             options={{
-              title: "Rate Chart",
+              title: 'Rate Chart',
               headerStyle: {
-                backgroundColor: "#003713",
+                backgroundColor: '#003713',
               },
-              headerTintColor: "#fff",
+              headerTintColor: '#fff',
             }}
             name="rate-chart"
           />
