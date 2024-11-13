@@ -12,6 +12,11 @@
 
 <img src="https://github.com/user-attachments/assets/b7ae4865-b28f-4a56-b786-68f486379c8d" alt="Amps Diagram" style="width:100%;"/>
 
+## Data Model
+
+<img src="https://github.com/user-attachments/assets/eb27d11d-336f-419d-9fdd-9d4307b9c6a0" alt="Amps Diagram" style="width:100%;"/>
+
+
 ## Features
 
 - **User-friendly Interface**: Easy-to-use interface for milk collection center operators.
@@ -56,6 +61,3 @@
 - **Expo**: Simplified setup and management of the app.
 - **Yarn**: For package management.
 
-## Data Model
-
-<img src="https://github.com/user-attachments/assets/eb27d11d-336f-419d-9fdd-9d4307b9c6a0" alt="Amps Diagram" style="width:100%;"/>
