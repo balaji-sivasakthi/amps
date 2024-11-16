@@ -1,5 +1,5 @@
-import { Text, StyleSheet, TouchableOpacity } from "react-native";
-import React from "react";
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
 
 interface AmpsCardProps {
   title: string;
@@ -13,10 +13,10 @@ const AmpsCard = ({ title, icon, onPress }: AmpsCardProps) => {
       {icon}
       <Text
         style={{
-          textAlign: "center",
+          textAlign: 'center',
           marginTop: 10,
           fontSize: 18,
-          fontWeight: "bold",
+          fontWeight: 'bold',
         }}
       >
         {title}
@@ -29,12 +29,12 @@ const styles = StyleSheet.create({
   container: {
     borderWidth: 1,
     borderRadius: 5,
-    width: "20%",
+    width: '20%',
     padding: 30,
-    borderColor: "#D9D9D9",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
+    borderColor: '#D9D9D9',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
 });
 

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistor, store } from '@/context/store';
+import { initConfig } from '@/config';
 
 export default function RootLayout() {
+  useEffect(() => {
+    initConfig();
+  }, []);
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
