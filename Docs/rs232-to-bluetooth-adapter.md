@@ -1,3 +1,1 @@
 ## RS 232 to Bluetooth Adapter
-
-

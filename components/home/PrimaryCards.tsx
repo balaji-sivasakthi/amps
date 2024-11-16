@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
-import AmpsImageCard from '../AmpsImageCard';
+import AmpsImageCard from '../common/AmpsImageCard';
 import { useRouter } from 'expo-router';
 
 export default function PrimaryCards() {

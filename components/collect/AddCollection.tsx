@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
-import AmpsTextInput from '../AmpsTextInput';
-import AmpsButton from '../AmpsButton';
+import AmpsTextInput from '../common/AmpsTextInput';
+import AmpsButton from '../common/AmpsButton';
 
 const AddCollection = () => {
   return (

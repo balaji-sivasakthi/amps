@@ -1,5 +1,5 @@
 import React from 'react';
-import AmpsButton from '@/components/AmpsButton';
+import AmpsButton from '@/components/common/AmpsButton';
 import { Colors } from '@/constants/Colors';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';

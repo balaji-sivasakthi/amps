@@ -1,6 +1,6 @@
 import { View, Image, StyleSheet } from 'react-native';
 import React from 'react';
-import AmpsCard from '../AmpsCard';
+import AmpsCard from '../common/AmpsCard';
 import { useRouter } from 'expo-router';
 
 const MenuCard = () => {

@@ -1,17 +1,15 @@
-import AmpsCard from '@/components/AmpsCard';
-import Header from '@/components/home/Header';
-import MenuCard from '@/components/home/MenuCard';
-import PrimaryCards from '@/components/home/PrimaryCards';
+import { ThemedView } from '@/components/common/ThemedView';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Text } from 'react-native';
 
 export default function SubscriptionScreen() {
   return (
-    <GestureHandlerRootView
+    <ThemedView
       style={{
         flex: 1,
       }}
-    ></GestureHandlerRootView>
+    >
+      <Text>Subscription Screen</Text>
+    </ThemedView>
   );
 }
