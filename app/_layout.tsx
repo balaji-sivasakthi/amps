@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { persistor, store } from '@/context/store';
+import { persistor, store } from '@/data/store';
 import { initConfig } from '@/config';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
