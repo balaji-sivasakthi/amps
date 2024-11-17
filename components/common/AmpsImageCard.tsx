@@ -19,7 +19,7 @@ const AmpsImageCard = ({ src, title, description, onPress }: AmpsImageCardProps)
           width: '100%',
           height: '100%',
         }}
-        source={src || require('../assets/images/icon.png')}
+        source={src || require('../../assets/images/icon.png')}
       >
         <View style={styles.content}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>

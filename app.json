@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "AMPS",
-    "slug": "AMPS",
+    "slug": "amps",
     "version": "1.0.0",
     "orientation": "landscape",
     "icon": "./assets/images/icon.png",
@@ -20,7 +20,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.latrosoft.amps"
     },
     "web": {
       "bundler": "metro",
@@ -28,7 +29,9 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      ["expo-router"],
+      [
+        "expo-router"
+      ],
       [
         "expo-screen-orientation",
         {
@@ -38,6 +41,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f29e05e9-538f-4ab5-ada1-f1e29171c9d8"
+      }
+    },
+    "owner": "balajisivasakthi"
   }
 }
