@@ -1,5 +1,5 @@
-import HttpService from '../http.service';
-import Center from '../model/center.model';
+import HttpService from '../../services/http.service';
+import Center from '../models/center.model';
 import { CenterLoginRequest } from '../types/center.type';
 
 class CenterService {
