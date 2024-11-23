@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function CollectScreen() {
   return (
-    <ThemedView>
+    <ThemedView style={{ flex: 1 }}>
       <AddCollection />
     </ThemedView>
   );

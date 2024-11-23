@@ -11,7 +11,7 @@ export default function PrimaryCards() {
         title="Add Farmer"
         description={'Register your Farmers'}
         onPress={() => {
-          router.push('/farmer');
+          router.push('/(screens)/farmers');
         }}
         src={require('../../assets/images/add-farmer-icon.png')}
       />
@@ -19,7 +19,7 @@ export default function PrimaryCards() {
         title="Add Rate Chart"
         description={'Adjust your rate chart'}
         onPress={() => {
-          router.push('/rate-chart');
+          router.push('/(screens)/rate-chart');
         }}
         src={require('../../assets/images/rate-chart-icon.png')}
       />

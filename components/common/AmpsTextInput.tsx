@@ -9,7 +9,7 @@ interface AmpsTextInputProps {
 export default function AmpsTextInput({ title, style }: AmpsTextInputProps) {
   return (
     <View style={style}>
-      <Text>{title}</Text>
+      <Text style={{ fontWeight: 'bold', marginBottom: 5, fontSize: 18 }}>{title}</Text>
       <TextInput style={styles.textInputStyle} />
     </View>
   );
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#C7C7C7',
     borderRadius: 5,
-    padding: 5,
+    padding: 16,
+    fontSize: 28,
   },
 });

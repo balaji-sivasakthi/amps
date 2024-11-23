@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AmpsButton from '@/components/common/AmpsButton';
 import { Colors } from '@/constants/Colors';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useRouter } from 'expo-router';
+import { useRootNavigationState, useRouter, useSegments } from 'expo-router';
 import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/data/slice';
 
 export default function Auth() {
+  const { isLoggedIn } = useSelector((state: RootState) => state.auth);
+  const rootNavigationState = useRootNavigationState();
   const router = useRouter();
+
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    router.replace('/(screens)/home');
+  };
+  useEffect(() => {
+    if (isLoggedIn && rootNavigationState.routeNames?.includes('(screens)')) {
+      router.replace('/(screens)/home');
+    }
+  }, [isLoggedIn, rootNavigationState]);
+
   return (
     <View style={styles.container}>
       <View style={styles.leftHalf} />
@@ -18,7 +35,7 @@ export default function Auth() {
             padding: 20,
           }}
         >
-          <Image style={styles.logoImage} source={require('../assets/images/icon.png')} />
+          <Image style={styles.logoImage} source={require('../../assets/images/icon.png')} />
           <Text
             style={{
               fontSize: 28,
@@ -34,6 +51,7 @@ export default function Auth() {
             Welcome to Milk Collecting App - Let's Login In{' '}
           </Text>
           <TextInput
+            onChangeText={(value) => setUserName(value)}
             style={styles.inputStyle}
             underlineColorAndroid="transparent"
             placeholder="User Name"
@@ -41,20 +59,16 @@ export default function Auth() {
             autoCapitalize="none"
           />
           <TextInput
+            onChangeText={(value) => setPassword(value)}
             style={styles.inputStyle}
             underlineColorAndroid="transparent"
             placeholder="Password"
             placeholderTextColor={Colors.light.primaryColor}
             autoCapitalize="none"
+            secureTextEntry
           />
 
-          <AmpsButton
-            title="Submit"
-            variant="primary"
-            onPress={() => {
-              router.push('/home');
-            }}
-          />
+          <AmpsButton title="Submit" variant="primary" onPress={handleLogin} />
         </View>
         <View
           style={{
@@ -74,7 +88,7 @@ export default function Auth() {
                 "Transforming dairy with smart, sustainable milk management for a connected future."
               </Text>
             </View>
-            <Image style={styles.heroImage} source={require('../assets/images/milk-hero.png')} />
+            <Image style={styles.heroImage} source={require('../../assets/images/milk-hero.png')} />
           </LinearGradient>
         </View>
       </View>

@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
   buttonPrimaryText: {
     color: 'white',
     textAlign: 'center',
+    fontSize: 24,
   },
   buttonSecondary: {
     justifyContent: 'center',
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     height: 55,
+    fontSize: 24,
   },
   buttonSecondaryText: {
     color: Colors.light.primaryColor,

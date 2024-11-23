@@ -9,28 +9,28 @@ const MenuCard = () => {
     <View style={styles.container}>
       <AmpsCard
         onPress={() => {
-          router.push('/collect');
+          router.push('/(screens)/procurements');
         }}
         icon={<Image source={require('./../../assets/images/collect-icon.png')} />}
         title="Collect"
       />
       <AmpsCard
         onPress={() => {
-          router.push('/report');
+          router.push('/(screens)/reports');
         }}
         icon={<Image source={require('./../../assets/images/report-icon.png')} />}
         title="Report"
       />
       <AmpsCard
         onPress={() => {
-          router.push('/profile');
+          router.push('/(screens)/profile');
         }}
         icon={<Image source={require('./../../assets/images/profile-icon.png')} />}
         title="Profile"
       />
       <AmpsCard
         onPress={() => {
-          router.push('/subscription');
+          router.push('/(screens)/subscription');
         }}
         icon={<Image source={require('./../../assets/images/subscription-icon.png')} />}
         title="Subscription"
