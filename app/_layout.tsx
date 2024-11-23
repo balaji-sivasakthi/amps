@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
-import { Slot, Stack } from 'expo-router';
+import { Stack } from 'expo-router';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { persistor, store } from '@/data/store';
 import { initConfig } from '@/config';
-import { KeyboardAvoidingView } from 'react-native';
 
 export default function RootLayout() {
   useEffect(() => {

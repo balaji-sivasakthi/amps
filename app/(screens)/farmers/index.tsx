@@ -36,7 +36,7 @@ const index = () => {
                 onPress={() => {
                   handleSubmit();
                 }}
-                title="CANCLE"
+                title="CANCEL"
               />
             </Col>
             <Col numRows={2}>

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import AmpsButton from '@/components/common/AmpsButton';
 import { Colors } from '@/constants/Colors';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useRootNavigationState, useRouter, useSegments } from 'expo-router';
+import { useRootNavigationState, useRouter } from 'expo-router';
 import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/data/slice';
