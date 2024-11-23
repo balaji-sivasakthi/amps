@@ -4,13 +4,14 @@ import React from 'react';
 interface AmpsTextInputProps {
   title: string;
   style?: StyleProp<ViewStyle>;
+  onChangeText?: ((text: string) => void) | undefined;
 }
 
-export default function AmpsTextInput({ title, style }: AmpsTextInputProps) {
+export default function AmpsTextInput({ title, style, onChangeText }: AmpsTextInputProps) {
   return (
     <View style={style}>
       <Text style={{ fontWeight: 'bold', marginBottom: 5, fontSize: 18 }}>{title}</Text>
-      <TextInput style={styles.textInputStyle} />
+      <TextInput onChangeText={onChangeText} style={styles.textInputStyle} />
     </View>
   );
 }
