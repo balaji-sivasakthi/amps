@@ -17,7 +17,7 @@ export default function CollectScreen() {
                 <AmpsTextInput onChangeText={handleChange} title="Farmer ID" />
               </Col>
               <Col numRows={2}>
-                <AmpsTextInput onChangeText={handleChange} title="Farmer Name" />
+                <AmpsTextInput onChangeText={handleChange} editable={false} title="Farmer Name" />
               </Col>
             </Row>
             <Row style={{ gap: 10, marginBottom: 20 }}>

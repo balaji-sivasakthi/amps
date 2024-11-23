@@ -10,7 +10,7 @@ export function generateUniqueString(length: number = 12): string {
   return uniqueString;
 }
 
-export function createObjectId() {
+export function createObjectId(): string {
   const uuid = uuidv4();
   const uuidHex = uuid.replace(/-/g, '');
   const timestampHex = uuidHex.substring(0, 8);

@@ -1,67 +1,96 @@
-import { StyleSheet } from 'react-native';
-import React from 'react';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState, useAppDispatch } from '@/data/slice';
+import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
+import { db } from '@/db';
+import migrations from '@/drizzle/migrations';
+import { fetchFarmers } from '@/data/slice/farmer.slice';
+import { FarmerResponse } from '@/api-sdk/types/farmer.type';
 import { ThemedView } from '@/components/common/ThemedView';
 import { Col, Row } from '@/components/common/Grid';
-import AmpsTextInput from '@/components/common/AmpsTextInput';
-import { Formik } from 'formik';
-import AmpsButton from '@/components/common/AmpsButton';
+import { Link } from 'expo-router';
 
-const index = () => {
+// Render a single farmer item
+const RenderItem = React.memo(({ item }: { item: FarmerResponse }) => (
+  <View style={styles.farmerCard}>
+    <View>
+      <Text style={styles.farmerCardTitle}>{item.name}</Text>
+      <Text style={styles.farmerCardSubTitle}>{item.farmer_id}</Text>
+    </View>
+    <View>
+      <Link
+        style={{
+          color: '#0295FE',
+          fontSize: 18,
+          borderBottomWidth: 2,
+          borderColor: '#0295FE',
+        }}
+        href={`/(screens)/farmers/${item.id}`}
+      >
+        View
+      </Link>
+    </View>
+  </View>
+));
+
+const FarmerList = () => {
+  const { error, farmers, status } = useSelector((state: RootState) => state.farmer);
+  const { success, error: dbError } = useMigrations(db, migrations);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (success) {
+      dispatch(fetchFarmers());
+    }
+    if (dbError) {
+      console.error('Migration failed:', dbError);
+    }
+    // console.log('Farmers:', farmers);
+  }, [success, dbError]);
+
+  // Handle loading, empty state, and errors
+  if (status === 'loading') {
+    return <Text>Loading...</Text>;
+  }
+
+  if (!farmers || farmers.length === 0) {
+    return <Text>No farmers available</Text>;
+  }
+
+  console.log(farmers.filter((data) => !data.id));
+
   return (
-    <Formik initialValues={{ email: '' }} onSubmit={(values) => console.log(values)}>
-      {({ handleChange, handleSubmit }) => (
-        <ThemedView style={styles.container}>
-          <ThemedView style={{ flex: 1, display: 'flex', alignItems: 'center' }}>
-            <Row style={{ gap: 10, marginBottom: 20 }}>
-              <Col numRows={2}>
-                <AmpsTextInput onChangeText={handleChange} title="Farmer Name" />
-              </Col>
-              <Col numRows={2}>
-                <AmpsTextInput onChangeText={handleChange} title="Farmer Mobile" />
-              </Col>
-            </Row>
-            <Row style={{ gap: 10, marginBottom: 20 }}>
-              <Col numRows={2}>
-                <AmpsTextInput onChangeText={handleChange} title="Farmer Street" />
-              </Col>
-              <Col numRows={2}>
-                <AmpsTextInput onChangeText={handleChange} title="Farmer Town/City" />
-              </Col>
-            </Row>
-          </ThemedView>
-          <Row style={{ gap: 10, marginBottom: 20 }}>
-            <Col numRows={2}>
-              <AmpsButton
-                variant="secondary"
-                onPress={() => {
-                  handleSubmit();
-                }}
-                title="CANCEL"
-              />
-            </Col>
-            <Col numRows={2}>
-              <AmpsButton
-                variant="primary"
-                onPress={() => {
-                  handleSubmit();
-                }}
-                title="SAVE"
-              />
-            </Col>
-          </Row>
-        </ThemedView>
-      )}
-    </Formik>
+    <ThemedView style={{ padding: 20, flex: 1 }}>
+      <FlatList
+        data={farmers.filter((data) => data.id) ?? []}
+        renderItem={({ item }) => <RenderItem item={item} />}
+        keyExtractor={(item) => item?.id?.toString() ?? ''}
+      />
+    </ThemedView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  farmerCard: {
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderColor: '#D9D9D9',
     padding: 30,
+    borderRadius: 5,
     display: 'flex',
-    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  farmerCardTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  farmerCardSubTitle: {
+    color: '#D9D9D9',
+    fontSize: 18,
   },
 });
 
-export default index;
+export default FarmerList;

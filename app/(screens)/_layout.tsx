@@ -1,5 +1,7 @@
 import React from 'react';
-import { Slot, Stack } from 'expo-router';
+import { router, Slot, Stack } from 'expo-router';
+import { Button, TouchableOpacity, View } from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function RootLayout() {
   return (
@@ -55,6 +57,7 @@ export default function RootLayout() {
         }}
         name="subscription/index"
       />
+
       <Stack.Screen
         options={{
           title: 'Farmer',
@@ -63,8 +66,28 @@ export default function RootLayout() {
           },
           headerTintColor: '#fff',
           headerBackTitleVisible: false,
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => {
+                router.push('/(screens)/farmers/add-farmer');
+              }}
+            >
+              <MaterialIcons name="add-box" size={50} color="white" />
+            </TouchableOpacity>
+          ),
         }}
         name="farmers/index"
+      />
+      <Stack.Screen
+        options={{
+          title: 'Add Farmer',
+          headerStyle: {
+            backgroundColor: '#003713',
+          },
+          headerTintColor: '#fff',
+          headerBackTitleVisible: false,
+        }}
+        name="farmers/add-farmer"
       />
       <Stack.Screen
         options={{
