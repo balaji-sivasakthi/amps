@@ -7,7 +7,12 @@ export const farmersTable = table('farmers', {
   id: t.text().notNull().unique(),
   name: t.text().notNull(),
   mobile: t.text().notNull(),
-  sync: t.int().notNull().default(0),
+  city: t.text().notNull(),
+  street: t.text().notNull(),
+  bank_name: t.text().notNull(),
+  account_no: t.text().notNull(),
+  branch: t.text().notNull(),
+  ifsc: t.text().notNull(),
   created_at: t.text().default(sql`(CURRENT_TIMESTAMP)`),
   updated_at: t.text().default(sql`(CURRENT_TIMESTAMP)`),
 });

@@ -1,11 +1,6 @@
 import Farmer from '../models/farmer.model';
 
-export interface FarmerResponse {
-  id: string;
-  name: string;
-  mobile: string;
-  sync: number;
-  farmer_id: number;
+export interface FarmerResponse extends Farmer {
   created_at: string | null;
   updated_at: string | null;
 }
