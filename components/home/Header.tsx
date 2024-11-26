@@ -1,6 +1,7 @@
 import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
 import React from 'react';
 import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 
 const Header = () => {
   return (
@@ -29,7 +30,11 @@ const Header = () => {
             <TouchableOpacity onPress={() => {}}>
               <MaterialIcons name="menu" size={48} color="white" />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity
+              onPress={() => {
+                router.push('/subscription');
+              }}
+            >
               <MaterialCommunityIcons name="crown-circle" size={24} color="yellow" />
             </TouchableOpacity>
           </View>
