@@ -2,9 +2,6 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity, Alert } from 'react
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '@/data/slice';
-import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
-import { db } from '@/db';
-import migrations from '@/drizzle/migrations';
 import { deleteFarmer, fetchFarmers } from '@/data/slice/farmer.slice';
 import { FarmerResponse } from '@/api-sdk/types/farmer.type';
 import { ThemedView } from '@/components/common/ThemedView';
@@ -13,17 +10,11 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const FarmerList = () => {
   const { error, farmers, status } = useSelector((state: RootState) => state.farmer);
-  const { success, error: dbError } = useMigrations(db, migrations);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (success) {
-      dispatch(fetchFarmers());
-    }
-    if (dbError) {
-      console.error('Migration failed:', dbError);
-    }
-  }, [success, dbError]);
+    dispatch(fetchFarmers());
+  }, []);
 
   if (status === 'loading') {
     return <Text>Loading...</Text>;

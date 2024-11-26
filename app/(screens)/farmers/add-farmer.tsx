@@ -1,40 +1,33 @@
-import { ActivityIndicator, Modal, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import React from 'react';
 import { ThemedView } from '@/components/common/ThemedView';
 import { Col, Row } from '@/components/common/Grid';
 import AmpsTextInput from '@/components/common/AmpsTextInput';
-import { Formik, useFormik, useFormikContext } from 'formik';
+import { Formik } from 'formik';
 import AmpsButton from '@/components/common/AmpsButton';
 import { createFarmer } from '@/data/slice/farmer.slice';
 import Farmer from '@/api-sdk/models/farmer.model';
 import { RootState, useAppDispatch } from '@/data/slice';
-import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
-import migrations from '../../../drizzle/migrations';
-import { db } from '@/db';
 import { useSelector } from 'react-redux';
-import { Colors } from '@/constants/Colors';
 import AmpsLoader from '@/components/common/AmpsLoader';
 
 const AddFarmer = () => {
   const { status } = useSelector((state: RootState) => state.farmer);
 
-  const { success, error: dbError } = useMigrations(db, migrations);
   const dispatch = useAppDispatch();
   const handleSave = (values: Omit<Farmer, 'farmer_id' | 'id'>) => {
-    if (success) {
-      dispatch(
-        createFarmer({
-          name: values.name,
-          mobile: values.mobile,
-          city: values.city,
-          street: values.street,
-          account_no: values.account_no,
-          bank_name: values.bank_name,
-          ifsc: values.ifsc,
-          branch: values.branch,
-        })
-      );
-    }
+    dispatch(
+      createFarmer({
+        name: values.name,
+        mobile: values.mobile,
+        city: values.city,
+        street: values.street,
+        account_no: values.account_no,
+        bank_name: values.bank_name,
+        ifsc: values.ifsc,
+        branch: values.branch,
+      })
+    );
   };
 
   return (

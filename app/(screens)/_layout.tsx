@@ -1,9 +1,20 @@
 import React from 'react';
-import { router, Slot, Stack } from 'expo-router';
-import { Button, TouchableOpacity, View } from 'react-native';
+import { router, Stack } from 'expo-router';
+import { Alert, TouchableOpacity } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useMigrations } from 'drizzle-orm/expo-sqlite/migrator';
+import { db } from '@/db';
+import migrations from '@/drizzle/migrations';
 
 export default function RootLayout() {
+  const { error } = useMigrations(db, migrations);
+  if (error) {
+    Alert.alert('DB Error', 'Migration Failed, Please ontact support team.', [
+      {
+        onPress: () => {},
+      },
+    ]);
+  }
   return (
     <Stack>
       <Stack.Screen
