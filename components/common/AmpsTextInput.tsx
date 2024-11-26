@@ -3,15 +3,22 @@ import React from 'react';
 
 interface AmpsTextInputProps extends TextInputProps {
   title: string;
+  inputText: string | number;
 }
 
-export default function AmpsTextInput({ title, style, ...rest }: AmpsTextInputProps) {
+export default function AmpsTextInput({
+  title,
+  style,
+  inputText,
+  editable = true,
+  ...rest
+}: AmpsTextInputProps) {
   return (
     <View style={style}>
       <Text style={{ fontWeight: 'bold', marginBottom: 5, fontSize: 18 }}>{title}</Text>
       <TextInput
-        value={rest.value}
-        style={[styles.textInputStyle, rest.editable ? {} : { backgroundColor: '#f2f2f2' }]}
+        value={String(inputText)}
+        style={[styles.textInputStyle, editable ? {} : { backgroundColor: '#f2f2f2' }]}
         {...rest}
       />
     </View>

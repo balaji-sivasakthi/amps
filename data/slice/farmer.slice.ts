@@ -1,5 +1,5 @@
 import Farmer from '@/api-sdk/models/farmer.model';
-import { FarmerResponse } from '@/api-sdk/types/farmer.type';
+import { FarmerResponse } from '@/api-sdk/types/response.type';
 import { db } from '@/db';
 import { farmersTable } from '@/db/schema/farmers';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';

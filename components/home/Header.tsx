@@ -13,7 +13,11 @@ const Header = () => {
       >
         <View
           style={{
-            padding: 20,
+            flex: 1,
+            padding: 30,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
           }}
         >
           <View
@@ -31,8 +35,14 @@ const Header = () => {
           </View>
           <View style={styles.headerRow}>
             <View>
-              <Text style={styles.headerDay}>Saturday</Text>
-              <Text style={styles.headerDay}>1 Oct 2024</Text>
+              <Text style={styles.headerDayBold}>
+                {
+                  ['Sun', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Sat'][
+                    new Date().getDay()
+                  ]
+                }
+              </Text>
+              <Text style={styles.headerDay}>{new Date().toLocaleDateString()}</Text>
             </View>
             <View
               style={{
@@ -40,16 +50,16 @@ const Header = () => {
               }}
             >
               <View style={styles.headerRightCard}>
-                <Text style={styles.headerDay}>Total Milk</Text>
+                <Text style={styles.headerDayBold}>Total Milk</Text>
                 <Text style={styles.headerDay}>5.9 Litre</Text>
               </View>
               <View style={styles.headerRightCard}>
-                <Text style={styles.headerDay}>Avg Fat</Text>
-                <Text style={styles.headerDay}>3.9</Text>
+                <Text style={styles.headerDayBold}>Avg Fat</Text>
+                <Text style={styles.headerDay}>3.9%</Text>
               </View>
               <View style={styles.headerRightCard}>
-                <Text style={styles.headerDay}>Avg SNF</Text>
-                <Text style={styles.headerDay}>5.9</Text>
+                <Text style={styles.headerDayBold}>Avg SNF</Text>
+                <Text style={styles.headerDay}>5.9%</Text>
               </View>
             </View>
           </View>
@@ -67,7 +77,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   headerDay: {
-    fontSize: 48,
+    fontSize: 18,
+    color: '#fff',
+  },
+  headerDayBold: {
+    fontSize: 24,
+    fontWeight: 'bold',
     color: '#fff',
   },
   headerRow: {

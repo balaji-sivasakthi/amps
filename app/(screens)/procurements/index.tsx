@@ -1,10 +1,12 @@
-import Farmer from '@/api-sdk/models/farmer.model';
 import AmpsButton from '@/components/common/AmpsButton';
 import AmpsTextInput from '@/components/common/AmpsTextInput';
 import { Col, Row } from '@/components/common/Grid';
 import { ThemedView } from '@/components/common/ThemedView';
 import { RootState } from '@/data/slice';
+import { db } from '@/db';
+import { rateChartsTable } from '@/db/schema/rate-chart';
 import { convertLitreToKg } from '@/utils/converter';
+import { and, sql } from 'drizzle-orm';
 import { Formik } from 'formik';
 import React from 'react';
 import { Alert, StyleSheet } from 'react-native';
@@ -12,10 +14,23 @@ import { useSelector } from 'react-redux';
 
 export default function CollectScreen() {
   const { farmers } = useSelector((state: RootState) => state.farmer);
+
   const calculateRatePerLitre = (fat: string, snf: string) => {
     if (snf == '' || fat == '') return '0';
-    const testTs = 3.0;
-    return ((parseFloat(snf) + parseFloat(fat)) * testTs).toFixed(3.0);
+    const totalSolid = parseFloat(snf) + parseFloat(fat);
+    const rateChart = db
+      .select()
+      .from(rateChartsTable)
+      .where(
+        and(
+          sql`${totalSolid} BETWEEN ${rateChartsTable.range_from} AND ${rateChartsTable.range_to}`
+        )
+      )
+      .all();
+    if (!rateChart || rateChart?.length == 0) {
+      return '0';
+    }
+    return ((parseFloat(snf) + parseFloat(fat)) * rateChart?.[0]?.rate).toFixed(3.0);
   };
   const calulateTotalAmount = (ratePerLitre: string, litre: string) => {
     if (ratePerLitre == '' || litre == '') return '0';
@@ -56,7 +71,7 @@ export default function CollectScreen() {
                     onChangeText={handleChange('farmer_id')}
                     title="Farmer ID"
                     keyboardType="numeric"
-                    value={values.farmer_id}
+                    inputText={values.farmer_id}
                   />
                 </Col>
                 <Col numRows={2}>
@@ -64,7 +79,7 @@ export default function CollectScreen() {
                     editable={false}
                     onChangeText={handleChange('farmer_name')}
                     title="Farmer Name"
-                    value={values.farmer_name}
+                    inputText={values.farmer_name}
                   />
                 </Col>
               </Row>
@@ -74,7 +89,7 @@ export default function CollectScreen() {
                     onChangeText={handleChange('snf')}
                     title="SNF"
                     keyboardType="numeric"
-                    value={values.snf}
+                    inputText={values.snf}
                   />
                 </Col>
                 <Col numRows={2}>
@@ -82,7 +97,7 @@ export default function CollectScreen() {
                     onChangeText={handleChange('fat')}
                     title="FAT"
                     keyboardType="numeric"
-                    value={values.fat}
+                    inputText={values.fat}
                   />
                 </Col>
               </Row>
@@ -92,7 +107,7 @@ export default function CollectScreen() {
                     onChangeText={handleChange('litre')}
                     title="Litre"
                     keyboardType="number-pad"
-                    value={values.litre}
+                    inputText={values.litre}
                   />
                 </Col>
                 <Col numRows={2}>
@@ -102,7 +117,7 @@ export default function CollectScreen() {
                     title="KG"
                     keyboardType="numeric"
                     showSoftInputOnFocus={false}
-                    value={convertLitreToKg(values.litre)}
+                    inputText={convertLitreToKg(values.litre) ?? ''}
                   />
                 </Col>
               </Row>
@@ -113,7 +128,7 @@ export default function CollectScreen() {
                     title="Rate/Litre"
                     keyboardType="numeric"
                     editable={false}
-                    value={calculateRatePerLitre(values.fat, values.snf)}
+                    inputText={calculateRatePerLitre(values.fat, values.snf)}
                   />
                 </Col>
                 <Col numRows={2}>
@@ -122,7 +137,7 @@ export default function CollectScreen() {
                     title="Total Amount"
                     keyboardType="numeric"
                     editable={false}
-                    value={calulateTotalAmount(
+                    inputText={calulateTotalAmount(
                       calculateRatePerLitre(values.fat, values.snf),
                       values.litre
                     )}

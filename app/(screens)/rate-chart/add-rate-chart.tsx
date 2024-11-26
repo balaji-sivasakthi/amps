@@ -5,36 +5,30 @@ import { Col, Row } from '@/components/common/Grid';
 import AmpsTextInput from '@/components/common/AmpsTextInput';
 import { Formik } from 'formik';
 import AmpsButton from '@/components/common/AmpsButton';
-import { createFarmer } from '@/data/slice/farmer.slice';
-import Farmer from '@/api-sdk/models/farmer.model';
 import { RootState, useAppDispatch } from '@/data/slice';
 import { useSelector } from 'react-redux';
 import AmpsLoader from '@/components/common/AmpsLoader';
+import AmpsDropDown from '@/components/common/AmpsSelect';
+import RateChart from '@/api-sdk/models/ratechart.model';
+import { createRateChart } from '@/data/slice/rate-chart.slice';
 
-const AddFarmer = () => {
+const AddRateChartScreen = () => {
   const { status } = useSelector((state: RootState) => state.farmer);
   const dispatch = useAppDispatch();
-  const handleSave = (values: Omit<Farmer, 'farmer_id' | 'id'>) => {
-    dispatch(
-      createFarmer({
-        ...values,
-      })
-    );
+  const handleSave = (values: Omit<RateChart, 'id'>) => {
+    dispatch(createRateChart({ ...values }));
   };
-
   return (
     <Formik
       initialValues={
         {
-          name: '',
-          mobile: '',
-          street: '',
-          city: '',
-          account_no: '',
-          bank_name: '',
-          branch: '',
-          ifsc: '',
-        } as Omit<Farmer, 'farmer_id' | 'id'>
+          bonus: 0,
+          commision: 0,
+          cowType: 'cow',
+          range_from: 0,
+          range_to: 0,
+          rate: 0,
+        } as Omit<RateChart, 'id'>
       }
       onSubmit={handleSave}
     >
@@ -44,64 +38,56 @@ const AddFarmer = () => {
             <Row style={{ gap: 10, marginBottom: 20 }}>
               <Col numRows={2}>
                 <AmpsTextInput
-                  inputText={values.name}
-                  onChangeText={handleChange('name')}
-                  title="Farmer Name"
+                  inputText={values.range_from}
+                  onChangeText={handleChange('range_from')}
+                  title="Range From"
                 />
               </Col>
               <Col numRows={2}>
                 <AmpsTextInput
-                  inputText={values.mobile}
-                  onChangeText={handleChange('mobile')}
-                  title="Farmer Mobile"
-                />
-              </Col>
-            </Row>
-            <Row style={{ gap: 10, marginBottom: 20 }}>
-              <Col numRows={2}>
-                <AmpsTextInput
-                  inputText={values.street}
-                  onChangeText={handleChange('street')}
-                  title="Farmer Street"
-                />
-              </Col>
-              <Col numRows={2}>
-                <AmpsTextInput
-                  inputText={values.city}
-                  onChangeText={handleChange('city')}
-                  title="Farmer Town/City"
+                  inputText={values.range_to}
+                  onChangeText={handleChange('range_to')}
+                  title="Range To"
                 />
               </Col>
             </Row>
             <Row style={{ gap: 10, marginBottom: 20 }}>
               <Col numRows={2}>
                 <AmpsTextInput
-                  inputText={values.street}
-                  onChangeText={handleChange('street')}
-                  title="Bank Name"
+                  inputText={values.rate}
+                  onChangeText={handleChange('rate')}
+                  title="RATE"
                 />
               </Col>
               <Col numRows={2}>
-                <AmpsTextInput
-                  inputText={values.city}
-                  onChangeText={handleChange('city')}
-                  title="Account No"
+                <AmpsDropDown
+                  placeholder="Select Cow type"
+                  data={[
+                    {
+                      label: 'Cow',
+                      value: 'cow',
+                    },
+                    {
+                      label: 'buff',
+                      value: 'buff',
+                    },
+                  ]}
                 />
               </Col>
             </Row>
             <Row style={{ gap: 10, marginBottom: 20 }}>
               <Col numRows={2}>
                 <AmpsTextInput
-                  inputText={values.street}
-                  onChangeText={handleChange('street')}
-                  title="Branch"
+                  inputText={`${values.commision}`}
+                  onChangeText={handleChange('commision')}
+                  title="Commision"
                 />
               </Col>
               <Col numRows={2}>
                 <AmpsTextInput
-                  inputText={values.city}
-                  onChangeText={handleChange('city')}
-                  title="IFSC Code"
+                  inputText={`${values.bonus}`}
+                  onChangeText={handleChange('bonus')}
+                  title="Bonus"
                 />
               </Col>
             </Row>
@@ -142,4 +128,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddFarmer;
+export default AddRateChartScreen;

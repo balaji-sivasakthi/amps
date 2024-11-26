@@ -5,6 +5,7 @@ module.exports = function (api) {
     plugins: [
       ['@babel/plugin-proposal-decorators', { legacy: true }],
       ['inline-import', { extensions: ['.sql'] }],
+      ['react-native-paper/babel'],
     ],
   };
 };

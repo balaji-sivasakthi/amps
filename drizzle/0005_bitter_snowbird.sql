@@ -1,0 +1,1 @@
+ALTER TABLE `rate_charts` ADD `cowType` text DEFAULT 'cow';

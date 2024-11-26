@@ -102,12 +102,32 @@ export default function RootLayout() {
       />
       <Stack.Screen
         options={{
+          title: 'Add Rate Chart',
+          headerStyle: {
+            backgroundColor: '#003713',
+          },
+          headerTintColor: '#fff',
+          headerBackTitleVisible: false,
+        }}
+        name="rate-chart/add-rate-chart"
+      />
+      <Stack.Screen
+        options={{
           title: 'Rate Chart',
           headerStyle: {
             backgroundColor: '#003713',
           },
           headerTintColor: '#fff',
           headerBackTitleVisible: false,
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => {
+                router.push('/(screens)/rate-chart/add-rate-chart');
+              }}
+            >
+              <MaterialIcons name="add-box" size={50} color="white" />
+            </TouchableOpacity>
+          ),
         }}
         name="rate-chart/index"
       />
