@@ -4,13 +4,23 @@ import AmpsTextInput from '@/components/common/AmpsTextInput';
 import { Col, Row } from '@/components/common/Grid';
 import { ThemedView } from '@/components/common/ThemedView';
 import { RootState } from '@/data/slice';
-import { Formik, useFormikContext } from 'formik';
+import { convertLitreToKg } from '@/utils/converter';
+import { Formik } from 'formik';
 import React from 'react';
 import { Alert, StyleSheet } from 'react-native';
 import { useSelector } from 'react-redux';
 
 export default function CollectScreen() {
   const { farmers } = useSelector((state: RootState) => state.farmer);
+  const calculateRatePerLitre = (fat: string, snf: string) => {
+    if (snf == '' || fat == '') return '0';
+    const testTs = 3.0;
+    return ((parseFloat(snf) + parseFloat(fat)) * testTs).toFixed(3.0);
+  };
+  const calulateTotalAmount = (ratePerLitre: string, litre: string) => {
+    if (ratePerLitre == '' || litre == '') return '0';
+    return (parseFloat(ratePerLitre) * parseFloat(litre)).toFixed(3);
+  };
   return (
     <Formik
       initialValues={{
@@ -18,8 +28,8 @@ export default function CollectScreen() {
         farmer_name: '',
         snf: '',
         fat: '',
-        litre: '',
-        kg: '',
+        litre: '0',
+        kg: '0',
         rate_per_litre: '',
         toal_amount: '',
       }}
@@ -45,6 +55,7 @@ export default function CollectScreen() {
                     onBlur={handleIdBlur}
                     onChangeText={handleChange('farmer_id')}
                     title="Farmer ID"
+                    keyboardType="numeric"
                     value={values.farmer_id}
                   />
                 </Col>
@@ -62,6 +73,7 @@ export default function CollectScreen() {
                   <AmpsTextInput
                     onChangeText={handleChange('snf')}
                     title="SNF"
+                    keyboardType="numeric"
                     value={values.snf}
                   />
                 </Col>
@@ -69,6 +81,7 @@ export default function CollectScreen() {
                   <AmpsTextInput
                     onChangeText={handleChange('fat')}
                     title="FAT"
+                    keyboardType="numeric"
                     value={values.fat}
                   />
                 </Col>
@@ -78,11 +91,19 @@ export default function CollectScreen() {
                   <AmpsTextInput
                     onChangeText={handleChange('litre')}
                     title="Litre"
+                    keyboardType="number-pad"
                     value={values.litre}
                   />
                 </Col>
                 <Col numRows={2}>
-                  <AmpsTextInput onChangeText={handleChange('kg')} title="KG" value={values.kg} />
+                  <AmpsTextInput
+                    editable={false}
+                    onChangeText={handleChange('kg')}
+                    title="KG"
+                    keyboardType="numeric"
+                    showSoftInputOnFocus={false}
+                    value={convertLitreToKg(values.litre)}
+                  />
                 </Col>
               </Row>
               <Row style={{ gap: 10, marginBottom: 20 }}>
@@ -90,14 +111,21 @@ export default function CollectScreen() {
                   <AmpsTextInput
                     onChangeText={handleChange('rate_per_litre')}
                     title="Rate/Litre"
-                    value={values.rate_per_litre}
+                    keyboardType="numeric"
+                    editable={false}
+                    value={calculateRatePerLitre(values.fat, values.snf)}
                   />
                 </Col>
                 <Col numRows={2}>
                   <AmpsTextInput
                     onChangeText={handleChange('total_amount')}
                     title="Total Amount"
-                    value={values.toal_amount}
+                    keyboardType="numeric"
+                    editable={false}
+                    value={calulateTotalAmount(
+                      calculateRatePerLitre(values.fat, values.snf),
+                      values.litre
+                    )}
                   />
                 </Col>
               </Row>

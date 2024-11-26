@@ -1,42 +1,18 @@
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  StyleProp,
-  ViewStyle,
-  TextInputBase,
-  TextInputFocusEventData,
-  NativeSyntheticEvent,
-} from 'react-native';
+import { View, Text, TextInput, StyleSheet, TextInputProps } from 'react-native';
 import React from 'react';
 
-interface AmpsTextInputProps {
+interface AmpsTextInputProps extends TextInputProps {
   title: string;
-  style?: StyleProp<ViewStyle>;
-  onChangeText?: ((text: string) => void) | undefined;
-  onBlur?: ((e: NativeSyntheticEvent<TextInputFocusEventData>) => void) | undefined;
-  editable?: boolean;
-  value?: string;
 }
 
-export default function AmpsTextInput({
-  title,
-  style,
-  onChangeText,
-  value,
-  onBlur,
-  editable = true,
-}: AmpsTextInputProps) {
+export default function AmpsTextInput({ title, style, ...rest }: AmpsTextInputProps) {
   return (
     <View style={style}>
       <Text style={{ fontWeight: 'bold', marginBottom: 5, fontSize: 18 }}>{title}</Text>
       <TextInput
-        value={value}
-        editable={editable}
-        onChangeText={onChangeText}
-        onBlur={onBlur}
-        style={[styles.textInputStyle, editable ? {} : { backgroundColor: '#f2f2f2' }]}
+        value={rest.value}
+        style={[styles.textInputStyle, rest.editable ? {} : { backgroundColor: '#f2f2f2' }]}
+        {...rest}
       />
     </View>
   );
