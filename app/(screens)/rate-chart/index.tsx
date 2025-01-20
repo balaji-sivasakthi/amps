@@ -4,7 +4,7 @@ import { ThemedView } from '@/components/common/ThemedView';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '@/data/slice';
 import { deleteRateChart, fetchRateChart } from '@/data/slice/rate-chart.slice';
-import { DataTable, Icon, IconButton, MD3Colors } from 'react-native-paper';
+import { DataTable, IconButton, MD3Colors } from 'react-native-paper';
 import { Colors } from '@/constants/Colors';
 
 export default function RateChartScreen() {

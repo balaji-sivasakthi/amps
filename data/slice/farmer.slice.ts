@@ -1,20 +1,18 @@
-import Farmer from '@/api-sdk/models/farmer.model';
-import { FarmerResponse } from '@/api-sdk/types/response.type';
 import { db } from '@/db';
-import { farmersTable } from '@/db/schema/farmers';
+import { Farmer, FarmerResult, farmersTable } from '@/db/schema/farmers';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import ObjectId from 'bson-objectid';
 import { eq } from 'drizzle-orm';
 
 interface FarmerState {
   status: 'idle' | 'loading' | 'failed';
-  farmers: FarmerResponse[];
+  farmers: FarmerResult[];
   error: Error | null;
 }
 
 export const createFarmer = createAsyncThunk(
   'farmer/addFarmer',
-  async (newFarmer: Omit<Farmer, 'farmer_id' | 'id'>, thunkAPI) => {
+  async (newFarmer: Farmer, thunkAPI) => {
     try {
       const newObjectId = new ObjectId().toString();
       const result = await db
@@ -45,7 +43,7 @@ export const fetchFarmers = createAsyncThunk('farmer/fetchFarmers', async (_, th
 
 export const updateFarmer = createAsyncThunk(
   'farmer/updateFarmer',
-  async (newFarmer: Partial<Farmer>, thunkAPI) => {
+  async (newFarmer: Farmer, thunkAPI) => {
     try {
       const results = await db
         .update(farmersTable)
@@ -121,7 +119,7 @@ const farmerSlice = createSlice({
         state.status = 'idle';
         state.farmers = state.farmers.map((farmer) =>
           farmer.id === payload[0].id ? payload : farmer
-        ) as FarmerResponse[];
+        ) as FarmerResult[];
       })
       .addCase(updateFarmer.rejected, handleRejected)
 

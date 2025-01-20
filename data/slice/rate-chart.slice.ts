@@ -1,20 +1,18 @@
-import RateChart from '@/api-sdk/models/ratechart.model';
-import { RateChartResponse } from '@/api-sdk/types/response.type';
 import { db } from '@/db';
-import { rateChartsTable } from '@/db/schema/rate-chart';
+import { RateChart, RateChartResult, rateChartsTable } from '@/db/schema/rate-chart';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import ObjectId from 'bson-objectid';
 import { eq } from 'drizzle-orm';
 
 interface RateChartState {
   status: 'idle' | 'loading' | 'failed';
-  rateCharts: RateChartResponse[];
+  rateCharts: RateChartResult[];
   error: Error | null;
 }
 
 export const createRateChart = createAsyncThunk(
   'rateChart/add',
-  async (ratechart: Omit<RateChart, 'id'>, thunkAPI) => {
+  async (ratechart: RateChart, thunkAPI) => {
     try {
       const newObjectId = new ObjectId().toString();
       const result = await db
@@ -46,7 +44,7 @@ export const fetchRateChart = createAsyncThunk('rateChart/fetch', async (_, thun
 
 export const updateRateChart = createAsyncThunk(
   'rateChart/update',
-  async (rateChart: Partial<RateChart>, thunkAPI) => {
+  async (rateChart: RateChart, thunkAPI) => {
     try {
       const results = await db
         .update(rateChartsTable)
@@ -121,7 +119,7 @@ const rateChartSlice = createSlice({
         state.status = 'idle';
         state.rateCharts = state.rateCharts.map((rateChart) =>
           rateChart.id === payload[0].id ? payload : rateChart
-        ) as RateChartResponse[];
+        ) as RateChartResult[];
       })
       .addCase(updateRateChart.rejected, handleRejected)
 

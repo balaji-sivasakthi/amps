@@ -9,13 +9,13 @@ import { RootState, useAppDispatch } from '@/data/slice';
 import { useSelector } from 'react-redux';
 import AmpsLoader from '@/components/common/AmpsLoader';
 import AmpsDropDown from '@/components/common/AmpsSelect';
-import RateChart from '@/api-sdk/models/ratechart.model';
 import { createRateChart } from '@/data/slice/rate-chart.slice';
+import { RateChart } from '@/db/schema/rate-chart';
 
 const AddRateChartScreen = () => {
   const { status } = useSelector((state: RootState) => state.farmer);
   const dispatch = useAppDispatch();
-  const handleSave = (values: Omit<RateChart, 'id'>) => {
+  const handleSave = (values: RateChart) => {
     dispatch(createRateChart({ ...values }));
   };
   return (
@@ -28,7 +28,7 @@ const AddRateChartScreen = () => {
           range_from: 0,
           range_to: 0,
           rate: 0,
-        } as Omit<RateChart, 'id'>
+        } as RateChart
       }
       onSubmit={handleSave}
     >
