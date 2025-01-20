@@ -2194,6 +2194,11 @@
   resolved "https://registry.yarnpkg.com/@react-native/normalize-colors/-/normalize-colors-0.74.87.tgz#a814169d0ce4ce13ffebcda0a3a5a3f780ccd772"
   integrity sha512-Xh7Nyk/MPefkb0Itl5Z+3oOobeG9lfLb7ZOY2DKpFnoCE1TzBmib9vMNdFaLdSxLIP+Ec6icgKtdzYg8QUPYzA==
 
+"@react-native/normalize-colors@0.76.6":
+  version "0.76.6"
+  resolved "https://registry.yarnpkg.com/@react-native/normalize-colors/-/normalize-colors-0.76.6.tgz#c2688aee5a824ad5331bb2b01791b024cd6643ea"
+  integrity sha512-1n4udXH2Cla31iA/8eLRdhFHpYUYK1NKWCn4m1Sr9L4SarWKAYuRFliK1fcLvPPALCFoFlWvn8I0ekdUOHMzDQ==
+
 "@react-native/virtualized-lists@0.74.87":
   version "0.74.87"
   resolved "https://registry.yarnpkg.com/@react-native/virtualized-lists/-/virtualized-lists-0.74.87.tgz#31bc44d62617df7d893df22c4c57094f576677a0"
@@ -2620,10 +2625,10 @@
   resolved "https://registry.yarnpkg.com/@types/tough-cookie/-/tough-cookie-4.0.5.tgz#cb6e2a691b70cb177c6e3ae9c1d2e8b2ea8cd304"
   integrity sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==
 
-"@types/use-sync-external-store@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.3.tgz#b6725d5f4af24ace33b36fafd295136e75509f43"
-  integrity sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==
+"@types/use-sync-external-store@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@types/use-sync-external-store/-/use-sync-external-store-0.0.6.tgz#60be8d21baab8c305132eb9cb912ed497852aadc"
+  integrity sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==
 
 "@types/yargs-parser@*":
   version "21.0.3"
@@ -4542,10 +4547,10 @@ eslint-plugin-import@^2.30.0:
     string.prototype.trimend "^1.0.8"
     tsconfig-paths "^3.15.0"
 
-eslint-plugin-prettier@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.2.1.tgz#d1c8f972d8f60e414c25465c163d16f209411f95"
-  integrity sha512-gH3iR3g4JfF+yYPaJYkN7jEl9QbweL/YfkoRlNnuIEHEz1vHVlCmWOS+eGGiRuzHQXdJFCOTxRgvju9b8VUmrw==
+eslint-plugin-prettier@^5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-5.2.3.tgz#c4af01691a6fa9905207f0fbba0d7bea0902cce5"
+  integrity sha512-qJ+y0FfCp/mQYQ/vWQ3s7eUlFEL4PyKfAJxsnYTJ4YT73nsJBWqmEpFryxV9OeUiqmsTsYJ5Y+KDNaeP31wrRw==
   dependencies:
     prettier-linter-helpers "^1.0.0"
     synckit "^0.9.1"
@@ -4887,17 +4892,17 @@ expo-sqlite@~14.0.6:
   dependencies:
     "@expo/websql" "^1.0.1"
 
-expo-status-bar@~1.12.1:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-1.12.1.tgz#52ce594aab5064a0511d14375364d718ab78aa66"
-  integrity sha512-/t3xdbS8KB0prj5KG5w7z+wZPFlPtkgs95BsmrP/E7Q0xHXTcDcQ6Cu2FkFuRM+PKTb17cJDnLkawyS5vDLxMA==
+expo-status-bar@~2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/expo-status-bar/-/expo-status-bar-2.0.1.tgz#fc07726346dc30fbb68aadb0d7890b34fba42eee"
+  integrity sha512-AkIPX7jWHRPp83UBZ1iXtVvyr0g+DgBVvIXTtlmPtmUsm8Vq9Bb5IGj86PW8osuFlgoTVAg7HI/+Ok7yEYwiRg==
 
-expo-system-ui@~3.0.7:
-  version "3.0.7"
-  resolved "https://registry.yarnpkg.com/expo-system-ui/-/expo-system-ui-3.0.7.tgz#73fee2a61db435e5d66cbf6407e0987f39c25b4e"
-  integrity sha512-KAs72F5JKhdIfPR9ZNVlRubTPK9uUuevPy5oYEp12xNEzSQcjZKvypH5NpwJuNWkXzrp3n3vZ+3pXsudA7J3KA==
+expo-system-ui@~4.0.7:
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/expo-system-ui/-/expo-system-ui-4.0.7.tgz#7ea463bebc48ea6f799a9ab117f80975471c2471"
+  integrity sha512-x1VDoE7J8m4wxTgWyUBEYqsf1KabIg64dOLzYiZjg0cWOE6o6kX2Mg6n3abVWEEC01WhZBoo9+Urcce/6ZJ3tg==
   dependencies:
-    "@react-native/normalize-colors" "0.74.85"
+    "@react-native/normalize-colors" "0.76.6"
     debug "^4.3.2"
 
 expo-updates-interface@~0.16.2:
@@ -8209,10 +8214,10 @@ react-native-reanimated@~3.10.1:
     convert-source-map "^2.0.0"
     invariant "^2.2.4"
 
-react-native-safe-area-context@4.10.5:
-  version "4.10.5"
-  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.10.5.tgz#a9c677a48bd273afa6876772062ce08e8af1f18d"
-  integrity sha512-Wyb0Nqw2XJ6oZxW/cK8k5q7/UAhg/wbEG6UVf89rQqecDZTDA5ic//P9J6VvJRVZerzGmxWQpVuM7f+PRYUM4g==
+react-native-safe-area-context@5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-5.1.0.tgz#0125f0c7762a2c189a3d067623ab8fbcdcb79cb8"
+  integrity sha512-Y4vyJX+0HPJUQNVeIJTj2/UOjbSJcB09OEwirAWDrOZ67Lz5p43AmjxSy8nnZft1rMzoh3rcPuonB6jJyHTfCw==
 
 react-native-screens@3.31.1:
   version "3.31.1"
@@ -8278,13 +8283,13 @@ react-native@0.74.5:
     ws "^6.2.2"
     yargs "^17.6.2"
 
-react-redux@^9.1.2:
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-9.1.2.tgz#deba38c64c3403e9abd0c3fbeab69ffd9d8a7e4b"
-  integrity sha512-0OA4dhM1W48l3uzmv6B7TXPCGmokUU4p1M44DGN2/D9a1FjVPukVjER1PcPX97jIg6aUeLq1XJo1IpfbgULn0w==
+react-redux@^9.2.0:
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-9.2.0.tgz#96c3ab23fb9a3af2cb4654be4b51c989e32366f5"
+  integrity sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==
   dependencies:
-    "@types/use-sync-external-store" "^0.0.3"
-    use-sync-external-store "^1.0.0"
+    "@types/use-sync-external-store" "^0.0.6"
+    use-sync-external-store "^1.4.0"
 
 react-refresh@^0.14.0, react-refresh@^0.14.2:
   version "0.14.2"
@@ -9742,10 +9747,10 @@ use-latest-callback@^0.2.1:
   resolved "https://registry.yarnpkg.com/use-latest-callback/-/use-latest-callback-0.2.3.tgz#2d644d3063040b9bc2d4c55bb525a13ae3de9e16"
   integrity sha512-7vI3fBuyRcP91pazVboc4qu+6ZqM8izPWX9k7cRnT8hbD5svslcknsh3S9BUhaK11OmgTV4oWZZVSeQAiV53SQ==
 
-use-sync-external-store@^1.0.0:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz#c3b6390f3a30eba13200d2302dcdf1e7b57b2ef9"
-  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
+use-sync-external-store@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.4.0.tgz#adbc795d8eeb47029963016cefdf89dc799fcebc"
+  integrity sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"
