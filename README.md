@@ -1,3 +1,8 @@
+⚠️ Work in Progress ⚠️
+
+This project is still under development and has not been updated in a while. Things might be broken, incomplete, or just straight-up messy.
+Feel free to explore, but proceed with caution 👷‍♀️
+
 <h1 align="center">
   Automated Milk Procurement System 
 </h1>
