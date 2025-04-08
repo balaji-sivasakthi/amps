@@ -1,26 +1,29 @@
+
 <div align="center">
 
 ### 🚧 WORK IN PROGRESS 🚧  
- This repo is still under active (ish) development.  
- Expect unfinished features, outdated code, and general chaos.  
-  
- 🛠️ Contributions are welcome, but just know: it's a little crusty right now.
+This project is currently under active development.  
+Some features may be incomplete, and parts of the codebase may be subject to change.
+
+💡 **Contributions are welcome**—please note that the repository is still evolving.
 
 </div>
 
 <h1 align="center">
-  Automated Milk Procurement System 
+  Automated Milk Procurement System (AMPS)
 </h1>
 
-<p align="center">Designed for <b>milk collection centers</b>, it facilitates efficient milk collection by handling tasks such as data entry, storage, and management to ensure a smooth and reliable collection process.</p>
+<p align="center">Designed for <strong>milk collection centers</strong>, AMPS simplifies and streamlines the milk procurement process. It supports efficient data entry, storage, and management to ensure accurate and timely milk collection operations.</p>
 
-![Milk Collection Group 1](https://github.com/user-attachments/assets/118492ec-34bd-4032-8315-5c510485c2f3)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/118492ec-34bd-4032-8315-5c510485c2f3" alt="Milk Collection Group 1">
+</p>
 
+---
 
+## 🗂️ System Architecture
 
-## System Diagram
-
-```
+```txt
          +--------------------+
          |   <<device>>       |
          |   Milk Analyzer    |
@@ -56,55 +59,71 @@
                       +-------------------+
                       |    Remote DB      |
                       +-------------------+
-
 ```
 
-## Data Model
+---
 
-<img src="https://github.com/user-attachments/assets/eb27d11d-336f-419d-9fdd-9d4307b9c6a0" alt="Amps Diagram" style="width:100%;"/>
+## 📊 Data Model
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/eb27d11d-336f-419d-9fdd-9d4307b9c6a0" alt="AMPS Data Model" style="width:100%;" />
+</p>
 
-## Features
+---
 
-- **User-friendly Interface**: Easy-to-use interface for milk collection center operators.
-- **Automated Collection Logging**: Records milk volume, quality, and time of collection.
-- **Data Management**: Stores milk collection data securely with streamlined access.
-- **Real-time Updates**: Syncs collection data, ensuring accurate and timely information.
-- **Reporting**: Generates reports for milk quantity, quality, and collection trends.
+## ✅ Features
 
-## Installation
+- **Intuitive User Interface**: Built for ease of use by milk collection center staff.
+- **Automated Logging**: Automatically records volume, quality, and timestamp of milk collections.
+- **Secure Data Management**: Ensures safe storage and easy access to all records.
+- **Real-Time Sync**: Seamlessly syncs data to the cloud when online.
+- **Analytics & Reporting**: Provides visual reports on volume, quality, and trends.
 
-1. **Clone the Repository**:
+---
 
-   ```bash
-   git clone https://github.com/balaji-sivasakthi/amps
-   cd amps
-   ```
+## 🚀 Getting Started
 
-2. **Install Dependencies**:
-   Use Yarn to install necessary dependencies:
+### 1. Clone the Repository
 
-   ```bash
-   yarn install
-   ```
+```bash
+git clone https://github.com/balaji-sivasakthi/amps
+cd amps
+```
 
-3. **Start the App**:
-   Run the app in the Expo Go app on a physical device or simulator:
-   ```bash
-   expo start
-   ```
+### 2. Install Dependencies
 
-## Usage
+Ensure you have [Yarn](https://yarnpkg.com/) installed, then run:
 
-1. **Launch the App** on your device or simulator using Expo.
-2. **Log in** to the milk collection system or create a new account.
-3. **Start Collecting**: Input milk data, including volume and quality metrics.
-4. **Sync Data**: Data automatically syncs with the server (if connected).
-5. **Generate Reports** as needed for tracking and analysis.
+```bash
+yarn install
+```
 
-## Technologies Used
+### 3. Start the Application
 
-- **React Native**: For building cross-platform mobile applications.
-- **Expo**: Simplified setup and management of the app.
-- **Yarn**: For package management.
+Launch the app using Expo:
+
+```bash
+expo start
+```
+
+Use the Expo Go app on your device or a simulator to run the application.
+
+---
+
+## 📖 How to Use
+
+1. **Open the App** on your mobile device or emulator.
+2. **Authenticate**: Log in or register a new account.
+3. **Begin Collection**: Input milk data including volume and quality.
+4. **Automatic Syncing**: The app will sync data with the server whenever a connection is available.
+5. **Access Reports**: Generate and review reports for analysis and auditing.
+
+---
+
+## 🧰 Tech Stack
+
+- **React Native**: Cross-platform mobile development framework.
+- **Expo**: Toolchain for streamlined app development and deployment.
+- **Yarn**: Dependency and package management.
+
 
