@@ -3,10 +3,10 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '@/data/slice';
 import { deleteFarmer, fetchFarmers } from '@/data/slice/farmer.slice';
-import { FarmerResponse } from '@/api-sdk/types/response.type';
 import { ThemedView } from '@/components/common/ThemedView';
 import { Link } from 'expo-router';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { FarmerResult } from '@/db/schema/farmers';
 
 const FarmerList = () => {
   const { error, farmers, status } = useSelector((state: RootState) => state.farmer);
@@ -28,7 +28,7 @@ const FarmerList = () => {
     );
   }
 
-  const RenderItem = React.memo(({ item }: { item: FarmerResponse }) => (
+  const RenderItem = React.memo(({ item }: { item: FarmerResult }) => (
     <View style={styles.farmerCard}>
       <View>
         <Text style={styles.farmerCardTitle}>{item.name}</Text>

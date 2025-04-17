@@ -6,15 +6,15 @@ import AmpsTextInput from '@/components/common/AmpsTextInput';
 import { Formik } from 'formik';
 import AmpsButton from '@/components/common/AmpsButton';
 import { createFarmer } from '@/data/slice/farmer.slice';
-import Farmer from '@/api-sdk/models/farmer.model';
 import { RootState, useAppDispatch } from '@/data/slice';
 import { useSelector } from 'react-redux';
 import AmpsLoader from '@/components/common/AmpsLoader';
+import { Farmer } from '@/db/schema/farmers';
 
 const AddFarmer = () => {
   const { status } = useSelector((state: RootState) => state.farmer);
   const dispatch = useAppDispatch();
-  const handleSave = (values: Omit<Farmer, 'farmer_id' | 'id'>) => {
+  const handleSave = (values: Farmer) => {
     dispatch(
       createFarmer({
         ...values,
@@ -34,7 +34,7 @@ const AddFarmer = () => {
           bank_name: '',
           branch: '',
           ifsc: '',
-        } as Omit<Farmer, 'farmer_id' | 'id'>
+        } as Farmer
       }
       onSubmit={handleSave}
     >

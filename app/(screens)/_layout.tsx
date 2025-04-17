@@ -24,16 +24,37 @@ export default function RootLayout() {
         }}
         name="home/index"
       />
+
       <Stack.Screen
         options={{
-          title: 'Procurements',
+          title: 'Procurement',
+          headerStyle: {
+            backgroundColor: '#003713',
+          },
+          headerTintColor: '#fff',
+          headerBackTitleVisible: false,
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => {
+                router.push('/(screens)/procurements/add-procurement');
+              }}
+            >
+              <MaterialIcons name="add-box" size={50} color="white" />
+            </TouchableOpacity>
+          ),
+        }}
+        name="procurements/index"
+      />
+      <Stack.Screen
+        options={{
+          title: 'Add Procurements',
           headerStyle: {
             backgroundColor: '#003713',
           },
           headerTintColor: '#fff',
           headerBackTitleVisible: false,
         }}
-        name="procurements/index"
+        name="procurements/add-procurement"
       />
       <Stack.Screen
         options={{
